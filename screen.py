@@ -14,8 +14,7 @@ class Screen: #screen vasuals
 
     def refresh_background(self):
         self.screen.fill(self.background_color)
-
-      
+  
     def draw_enemies(self, enemy_list):
         for enemy in enemy_list:
             enemy.draw(self.screen)
