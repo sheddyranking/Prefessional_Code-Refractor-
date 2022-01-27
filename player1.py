@@ -18,14 +18,14 @@ class Player:
                 return True
         return False
 
-class Enemy(player):
+class Enemy(Player):
     def __init__(self, x, y):
         super().__init__(x, y, size = 50, color = Color.BLUE)  
 
-class LargeEnemy(player):
+class LargeEnemy(Player):
     def __init__(self, x, y):
         super().__init__(x, y, size = 100, color = Color.BLUE)   
 
-class LargeEnemy(player):
+class LargeEnemy(Player):
     def __init__(self, x, y):
         super().__init__(x, y, size = 50, color = Color.RED)  
