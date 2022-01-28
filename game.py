@@ -2,19 +2,17 @@ import random
 
 from player1 import Enemy
 class Game:
-    def __init__(self, speed, score, enemy_list, max_enemies = 10, delay = 0.1 ):
+    def __init__(self, speed = 10, score = 0, max_enemies = 10, delay = 0.1 ):
         self.speed = speed
         self.score = score
-        self.enemy_list = enemy_list
         self.max_enemies = max_enemies
         self.delay = delay
         
-
         self.enemy_list = []
 
     def drop_enemies(self, screen_width):
         delay = random.random() 
-        if len(self.enemy_list) < self.max_enemies  and delay < self.delay:
+        if len(enemy_list) < self.max_enemies and delay < self.delay:
             random_x = random.randint(0, screen_width)
             y_pos = 0
             enemy = Enemy(random_x, y_pos)
@@ -29,5 +27,25 @@ class Game:
         else:
             self.score += 1 
         self.enemy_list = new_enemy_list
+
+    def set_level(self): #dificaulty in level
+        if self.score < 20:
+            self.speed = 5
+        elif self.score < 40:
+            self.speed = 8
+        elif self.score < 60:
+            self.speed = 12
+        else:
+            self.speed = 15
+
+    def collision_check(self, player):
+        for enemy in enemy_list:
+            if enemy.detect_collision(player):
+                return True
+        return False
+    
+    
+    
+  
     
 
