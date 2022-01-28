@@ -27,7 +27,7 @@ class Screen: #screen vasuals
         label = self.font.render(text, 1, color)
         self.screen.blit(label, (self.width-200, self.height-40))
 
-    def update_screen (self, enemy_list, score, player):
+    def update_screen(self, enemy_list, player, score):
         self.refresh_background()
         self.draw_enemies(enemy_list)
         self.draw_player(player)
